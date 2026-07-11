@@ -8,18 +8,18 @@ local Window = Rayfield:CreateWindow({
         Enabled = true,
         FolderName = "FloppaScripts",
         FileName = "MainConfig"
-    },
+    }
 })
 
--- ==================== СОЗДАЁМ ТАБЫ ====================
 local TabMain = Window:CreateTab("Основное", 4483362458)
 local TabGame = Window:CreateTab("Главное", 4483362458)
+local TabMonster = Window:CreateTab("Монстры", 4483362458)
 
 -- ==================== ПЕРЕМЕННЫЕ ====================
 local spd = false
 local esp = false
 
--- ==================== ФУНКЦИИ (логика) ====================
+-- ==================== ФУНКЦИИ ====================
 
 -- Спидранер
 task.spawn(function()
@@ -56,24 +56,8 @@ task.spawn(function()
     end
 end)
 
--- ==================== UI (заполняем табы) ====================
+-- ==================== UI ====================
 
--- Основное
-TabMain:CreateParagraph({ Title = "ЙОУ😎", Content = "Привет, Друн!\n\nЯ очень благодарен тебе за использование моего скрипта." })
-TabMain:CreateParagraph({ Title = "ПРАВИЛА СОГЛАШЕНИЯ", Content = "ЗАПУСКАЯ СКРИПТ ВЫ АВТОМАТИЧЕСКИ СОГЛАШАЕТЕСЬ С ПРАВИЛАМИ..." })
-TabMain:CreateParagraph({ Title = "ОБНОВЛЕНИЯ", Content = "Все обновления скрипта будут выходить в Discord сервере." })
-TabMain:CreateParagraph({ Title = "❔ВЕРСИЯ", Content = "v1.2 | Alpha script" })
-TabMain:CreateLabel("✓ – Значит полностью рабочий.\n× – Значит неполностью/полностью нерабочий")
-
-TabMain:CreateButton({
-    Name = "Discord Server",
-    Callback = function()
-        setclipboard("https://discord.gg/VbwR3pmNAb")
-        Rayfield:Notify({Title = "Discord", Content = "Ссылка скопирована!", Duration = 5})
-    end
-})
-
--- Главное
 TabGame:CreateToggle({
     Name = "Спидранер",
     CurrentValue = false,
@@ -99,6 +83,21 @@ TabGame:CreateButton({
     Callback = function()
         Rayfield:Notify({ Title = "В разработке", Content = "Зелье ночного зрения пока не готово", Duration = 3 })
     end,
+})
+
+-- Основное вкладка
+TabMain:CreateParagraph({ Title = "ЙОУ😎", Content = "Привет, Друн!\n\nЯ очень благодарен тебе за использование моего скрипта." })
+TabMain:CreateParagraph({ Title = "ПРАВИЛА СОГЛАШЕНИЯ", Content = "ЗАПУСКАЯ СКРИПТ ВЫ АВТОМАТИЧЕСКИ СОГЛАШАЕТЕСЬ С ПРАВИЛАМИ..." })
+TabMain:CreateParagraph({ Title = "ОБНОВЛЕНИЯ", Content = "Все обновления скрипта будут выходить в Discord сервере." })
+TabMain:CreateParagraph({ Title = "❔ВЕРСИЯ", Content = "v1.2 | Alpha script" })
+TabMain:CreateLabel("✓ – Значит полностью рабочий.\n× – Значит неполностью/полностью нерабочий")
+
+TabMain:CreateButton({ 
+    Name = "Discord Server", 
+    Callback = function() 
+        setclipboard("https://discord.gg/VbwR3pmNAb") 
+        Rayfield:Notify({Title = "Discord", Content = "Ссылка скопирована!", Duration = 5}) 
+    end 
 })
 
 Rayfield:Notify({
