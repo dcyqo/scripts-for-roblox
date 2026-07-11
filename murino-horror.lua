@@ -17,7 +17,7 @@ local TabMain = Window:CreateTab("Основное", 4483362458)
 TabMain:CreateParagraph({ Title = "ЙОУ😎", Content = "Привет, Друн!\n\nЯ очень благодарен тебе за использование моего скрипта." })
 TabMain:CreateParagraph({ Title = "ПРАВИЛА СОГЛАШЕНИЯ", Content = "ЗАПУСКАЯ СКРИПТ ВЫ АВТОМАТИЧЕСКИ СОГЛАШАЕТЕСЬ С ПРАВИЛАМИ..." })
 TabMain:CreateParagraph({ Title = "ОБНОВЛЕНИЯ", Content = "Все обновления скрипта будут выходить в Discord сервере." })
-TabMain:CreateParagraph({ Title = "❔ВЕРСИЯ", Content = "v1.2 | Alpha script" })
+TabMain:CreateParagraph({ Title = "❔ВЕРСИЯ", Content = "v1.4 | Alpha script" })
 TabMain:CreateLabel("✓ – Значит полностью рабочий.\n× – Значит неполностью/полностью нерабочий")
 
 TabMain:CreateButton({
