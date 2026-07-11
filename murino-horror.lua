@@ -11,13 +11,15 @@ local Window = Rayfield:CreateWindow({
     },
 })
 
--- ==================== ОСНОВНОЕ ====================
+-- ==================== СОЗДАЁМ ВСЕ ТАБЫ СРАЗУ ====================
 local TabMain = Window:CreateTab("Основное", 4483362458)
+local TabGame = Window:CreateTab("Главное", 4483362458)
 
+-- ==================== ОСНОВНОЕ ====================
 TabMain:CreateParagraph({ Title = "ЙОУ😎", Content = "Привет, Друн!\n\nЯ очень благодарен тебе за использование моего скрипта." })
 TabMain:CreateParagraph({ Title = "ПРАВИЛА СОГЛАШЕНИЯ", Content = "ЗАПУСКАЯ СКРИПТ ВЫ АВТОМАТИЧЕСКИ СОГЛАШАЕТЕСЬ С ПРАВИЛАМИ..." })
 TabMain:CreateParagraph({ Title = "ОБНОВЛЕНИЯ", Content = "Все обновления скрипта будут выходить в Discord сервере." })
-TabMain:CreateParagraph({ Title = "❔ВЕРСИЯ", Content = "v1.4 | Alpha script" })
+TabMain:CreateParagraph({ Title = "❔ВЕРСИЯ", Content = "v1.2 | Alpha script" })
 TabMain:CreateLabel("✓ – Значит полностью рабочий.\n× – Значит неполностью/полностью нерабочий")
 
 TabMain:CreateButton({
@@ -33,12 +35,10 @@ TabMain:CreateButton({
 })
 
 -- ==================== ГЛАВНОЕ ====================
-local MainTab = Window:CreateTab("Главное", 4483362458)
-
 local spd = false
 local esp = false
 
-MainTab:CreateToggle({
+TabGame:CreateToggle({
     Name = "Спидранер",
     CurrentValue = false,
     Flag = "SpeedrunnerToggle",
@@ -48,7 +48,7 @@ MainTab:CreateToggle({
     end,
 })
 
-MainTab:CreateToggle({
+TabGame:CreateToggle({
     Name = "Ребята я вас вижу",
     CurrentValue = false,
     Flag = "ESPToggle",
@@ -58,7 +58,7 @@ MainTab:CreateToggle({
     end,
 })
 
-MainTab:CreateButton({
+TabGame:CreateButton({
     Name = "Зелье ночного зрения (в разработке)",
     Callback = function()
         Rayfield:Notify({ Title = "В разработке", Content = "Зелье ночного зрения пока не готово", Duration = 3 })
